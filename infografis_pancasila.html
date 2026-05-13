@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pancasila dalam 3 Perspektif</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --merah: #C0392B;
+    --putih: #FAFAFA;
+    --biru-tua: #1B2A4A;
+    --biru-sedang: #2E5FA3;
+    --hijau: #1A7A4A;
+    --ungu: #6C3483;
+    --kuning: #F39C12;
+    --kuning-muda: #FEF9E7;
+    --abu: #ECF0F1;
+    --teks: #2C3E50;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: #f0f4f8;
+    color: var(--teks);
+  }
+
+  .poster {
+    width: 900px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, var(--biru-tua) 0%, #243B6E 60%, var(--merah) 100%);
+    padding: 30px 40px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+  }
+
+  .header-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 12px;
+  }
+
+  .garuda-emoji { font-size: 52px; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4)); }
+  .bendera-emoji { font-size: 40px; }
+
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    color: white;
+    letter-spacing: 3px;
+    text-shadow: 0 3px 12px rgba(0,0,0,0.4);
+    line-height: 1;
+  }
+
+  .header h1 span { color: #FFD700; }
+
+  .subtitle-banner {
+    display: inline-block;
+    background: var(--merah);
+    color: white;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    padding: 6px 28px;
+    border-radius: 4px;
+    margin: 8px 0 14px;
+    text-transform: uppercase;
+  }
+
+  .kutipan {
+    background: rgba(255,255,255,0.1);
+    border-left: 4px solid #FFD700;
+    border-radius: 8px;
+    padding: 12px 20px;
+    color: rgba(255,255,255,0.92);
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* TIGA KOLOM */
+  .tiga-perspektif {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+  }
+
+  .kolom {
+    padding: 0;
+    border-right: 2px solid #e8edf3;
+  }
+
+  .kolom:last-child { border-right: none; }
+
+  .kolom-header {
+    padding: 16px 14px 14px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+    text-transform: uppercase;
+    color: white;
+  }
+
+  .kolom-1 .kolom-header { background: var(--biru-sedang); }
+  .kolom-2 .kolom-header { background: var(--hijau); }
+  .kolom-3 .kolom-header { background: var(--ungu); }
+
+  .kolom-img {
+    width: 100%;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 72px;
+    background: linear-gradient(180deg, rgba(0,0,0,0.03), rgba(0,0,0,0.06));
+  }
+
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px 8px;
+    font-weight: 800;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: white;
+  }
+
+  .kolom-1 .section-label { background: #2471A3; }
+  .kolom-2 .section-label { background: #1E8449; }
+  .kolom-3 .section-label { background: #7D3C98; }
+
+  .section-label .icon { font-size: 18px; }
+
+  .kolom-body {
+    padding: 12px 14px 10px;
+    font-size: 12.5px;
+    line-height: 1.65;
+    color: #34495e;
+    background: white;
+    border-bottom: 1px solid #edf0f4;
+  }
+
+  .ciri-list {
+    padding: 10px 14px 12px;
+    background: #f8fafc;
+    border-bottom: 1px solid #edf0f4;
+  }
+
+  .ciri-list ul { list-style: none; padding: 0; }
+  .ciri-list ul li {
+    padding: 3px 0 3px 18px;
+    position: relative;
+    font-size: 12px;
+    line-height: 1.55;
+    color: #34495e;
+  }
+
+  .ciri-list ul li::before {
+    content: '●';
+    position: absolute;
+    left: 0;
+    font-size: 8px;
+    top: 5px;
+  }
+
+  .kolom-1 .ciri-list ul li::before { color: var(--biru-sedang); }
+  .kolom-2 .ciri-list ul li::before { color: var(--hijau); }
+  .kolom-3 .ciri-list ul li::before { color: var(--ungu); }
+
+  .contoh-list {
+    padding: 10px 14px 14px;
+    background: white;
+  }
+
+  .contoh-list ul { list-style: none; padding: 0; }
+  .contoh-list ul li {
+    padding: 3px 0 3px 18px;
+    position: relative;
+    font-size: 12px;
+    line-height: 1.55;
+    color: #34495e;
+  }
+
+  .contoh-list ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    top: 3px;
+    font-size: 11px;
+  }
+
+  .kolom-1 .contoh-list ul li::before { color: var(--biru-sedang); }
+  .kolom-2 .contoh-list ul li::before { color: var(--hijau); }
+  .kolom-3 .contoh-list ul li::before { color: var(--ungu); }
+
+  /* LIMA SILA */
+  .sila-section {
+    background: linear-gradient(135deg, #1B2A4A 0%, #2c3e6b 100%);
+    padding: 22px 30px 26px;
+  }
+
+  .sila-title {
+    text-align: center;
+    color: #FFD700;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+  }
+
+  .sila-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+  }
+
+  .sila-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    padding: 14px 10px 12px;
+    text-align: center;
+    transition: all 0.2s;
+  }
+
+  .sila-number {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 16px;
+    color: white;
+    margin: 0 auto 8px;
+  }
+
+  .sila-card:nth-child(1) .sila-number { background: #C0392B; }
+  .sila-card:nth-child(2) .sila-number { background: #E67E22; }
+  .sila-card:nth-child(3) .sila-number { background: #27AE60; }
+  .sila-card:nth-child(4) .sila-number { background: #2980B9; }
+  .sila-card:nth-child(5) .sila-number { background: #8E44AD; }
+
+  .sila-icon { font-size: 28px; margin-bottom: 6px; display: block; }
+
+  .sila-nama {
+    color: #FFD700;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+
+  .sila-desc {
+    color: rgba(255,255,255,0.82);
+    font-size: 10.5px;
+    line-height: 1.5;
+  }
+
+  /* KESIMPULAN */
+  .kesimpulan {
+    background: #FFFBF0;
+    border-top: 3px solid #FFD700;
+    padding: 18px 30px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .kutipan-besar {
+    background: var(--biru-tua);
+    border-radius: 12px;
+    padding: 16px 18px;
+    color: white;
+    font-size: 13px;
+    font-style: italic;
+    line-height: 1.7;
+    text-align: center;
+  }
+
+  .kutipan-besar .tanda { color: #FFD700; font-size: 22px; font-style: normal; line-height: 0.5; display: block; }
+
+  .kesimpulan-teks h3 {
+    color: var(--biru-tua);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #FFD700;
+    display: inline-block;
+  }
+
+  .kesimpulan-teks p {
+    font-size: 12.5px;
+    line-height: 1.7;
+    color: #34495e;
+  }
+
+  /* REFERENSI */
+  .referensi {
+    background: var(--biru-tua);
+    padding: 14px 30px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .ref-label {
+    background: #FFD700;
+    color: var(--biru-tua);
+    font-size: 11px;
+    font-weight: 800;
+    padding: 5px 12px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+
+  .ref-list {
+    color: rgba(255,255,255,0.8);
+    font-size: 11px;
+    line-height: 1.8;
+  }
+
+  .ref-list span { display: block; }
+  .ref-list span::before { content: '• '; color: #FFD700; }
+
+  /* DIVIDER */
+  .divider {
+    height: 3px;
+    background: linear-gradient(90deg, var(--biru-sedang), var(--hijau), var(--ungu));
+  }
+</style>
+</head>
+<body>
+<div class="poster">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <span class="garuda-emoji">🦅</span>
+      <div>
+        <h1>PAN<span>CASILA</span></h1>
+        <div class="subtitle-banner">Dalam 3 Perspektif</div>
+      </div>
+      <span class="bendera-emoji">🇮🇩</span>
+    </div>
+    <div class="kutipan">
+      ❝ Pancasila adalah jiwa bangsa dan pandangan hidup bangsa Indonesia yang menjadi landasan dalam berfikir, bersikap, dan bertindak. ❞
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- TIGA KOLOM PERSPEKTIF -->
+  <div class="tiga-perspektif">
+
+    <!-- KOLOM 1 -->
+    <div class="kolom kolom-1">
+      <div class="kolom-header">1. Pancasila Sebagai<br>Dasar Falsafah Negara</div>
+      <div class="kolom-img">🏛️</div>
+
+      <div class="section-label"><span class="icon">📖</span> Definisi</div>
+      <div class="kolom-body">
+        Pancasila sebagai dasar utama negara, sumber dari segala sumber hukum, serta landasan dalam penyelenggaraan negara Indonesia.
+      </div>
+
+      <div class="section-label"><span class="icon">🎯</span> Fokus / Ciri Khas</div>
+      <div class="ciri-list">
+        <ul>
+          <li>Bersifat normatif dan mengikat seluruh penyelenggara negara</li>
+          <li>Menjadi dasar hukum tertinggi dalam sistem ketatanegaraan</li>
+          <li>Tercantum dalam Pembukaan UUD 1945</li>
+        </ul>
+      </div>
+
+      <div class="section-label"><span class="icon">⚖️</span> Contoh Penerapan</div>
+      <div class="contoh-list">
+        <ul>
+          <li>UUD 1945 disusun berdasarkan nilai Pancasila</li>
+          <li>Semua peraturan perundang-undangan harus sesuai dengan nilai Pancasila</li>
+          <li>Kebijakan pemerintah tidak boleh bertentangan dengan Pancasila</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- KOLOM 2 -->
+    <div class="kolom kolom-2">
+      <div class="kolom-header">2. Pancasila Sebagai<br>Ideologi Negara</div>
+      <div class="kolom-img">🤝</div>
+
+      <div class="section-label"><span class="icon">📖</span> Definisi</div>
+      <div class="kolom-body">
+        Pancasila sebagai pedoman hidup bangsa Indonesia yang menjadi arah, tujuan, dan landasan dalam kehidupan bermasyarakat, berbangsa, dan bernegara.
+      </div>
+
+      <div class="section-label"><span class="icon">🎯</span> Fokus / Ciri Khas</div>
+      <div class="ciri-list">
+        <ul>
+          <li>Bersifat dinamis dan fleksibel sesuai perkembangan zaman</li>
+          <li>Menjadi pandangan hidup bangsa (<em>Weltanschauung</em>)</li>
+          <li>Mengarahkan perilaku dan tindakan masyarakat</li>
+        </ul>
+      </div>
+
+      <div class="section-label"><span class="icon">⚖️</span> Contoh Penerapan</div>
+      <div class="contoh-list">
+        <ul>
+          <li>Toleransi antar umat beragama dan suku</li>
+          <li>Gotong royong dalam masyarakat</li>
+          <li>Mengutamakan kepentingan bersama di atas kepentingan pribadi atau golongan</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- KOLOM 3 -->
+    <div class="kolom kolom-3">
+      <div class="kolom-header">3. Pancasila Sebagai<br>Sistem Filsafat</div>
+      <div class="kolom-img">🧠</div>
+
+      <div class="section-label"><span class="icon">📖</span> Definisi</div>
+      <div class="kolom-body">
+        Pancasila sebagai hasil pemikiran yang sistematis, mendalam, dan menyeluruh tentang hakikat manusia, masyarakat, negara, dan hubungan antara keduanya.
+      </div>
+
+      <div class="section-label"><span class="icon">🎯</span> Fokus / Ciri Khas</div>
+      <div class="ciri-list">
+        <ul>
+          <li>Bersifat teoritis, rasional, dan reflektif</li>
+          <li>Membahas nilai kebenaran, moral, dan etika secara mendalam</li>
+          <li>Menjadi dasar berpikir kritis dan ilmiah</li>
+        </ul>
+      </div>
+
+      <div class="section-label"><span class="icon">⚖️</span> Contoh Penerapan</div>
+      <div class="contoh-list">
+        <ul>
+          <li>Menghargai nilai kemanusiaan secara rasional</li>
+          <li>Berpikir kritis dan etis dalam mengambil keputusan</li>
+          <li>Meneliti dan menganalisis masalah sosial berlandaskan nilai Pancasila</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- LIMA SILA -->
+  <div class="sila-section">
+    <div class="sila-title">⭐ Penerapan Nilai Pancasila dalam Kehidupan Sehari-hari ⭐</div>
+    <div class="sila-grid">
+
+      <div class="sila-card">
+        <div class="sila-number">1</div>
+        <span class="sila-icon">🙏</span>
+        <div class="sila-nama">Ketuhanan Yang Maha Esa</div>
+        <div class="sila-desc">Beribadah sesuai agama dan kepercayaan masing-masing serta saling menghormati perbedaan.</div>
+      </div>
+
+      <div class="sila-card">
+        <div class="sila-number">2</div>
+        <span class="sila-icon">🤝</span>
+        <div class="sila-nama">Kemanusiaan yang Adil dan Beradab</div>
+        <div class="sila-desc">Menghargai hak dan martabat setiap manusia, menolong sesama yang membutuhkan.</div>
+      </div>
+
+      <div class="sila-card">
+        <div class="sila-number">3</div>
+        <span class="sila-icon">🇮🇩</span>
+        <div class="sila-nama">Persatuan Indonesia</div>
+        <div class="sila-desc">Menjaga persatuan dan kesatuan, tidak membeda-bedakan suku, agama, ras, dan antar golongan.</div>
+      </div>
+
+      <div class="sila-card">
+        <div class="sila-number">4</div>
+        <span class="sila-icon">🗣️</span>
+        <div class="sila-nama">Kerakyatan yang Dipimpin oleh Hikmat Kebijaksanaan</div>
+        <div class="sila-desc">Musyawarah untuk mencapai mufakat dalam setiap pengambilan keputusan.</div>
+      </div>
+
+      <div class="sila-card">
+        <div class="sila-number">5</div>
+        <span class="sila-icon">⚖️</span>
+        <div class="sila-nama">Keadilan Sosial bagi Seluruh Rakyat Indonesia</div>
+        <div class="sila-desc">Bersikap adil dan mengupayakan pemerataan kesejahteraan bagi semua.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- KESIMPULAN -->
+  <div class="kesimpulan">
+    <div class="kutipan-besar">
+      <span class="tanda">❝</span>
+      Pancasila bukan hanya untuk dihafal, tetapi untuk dihidupi dan diamalkan dalam setiap tindakan nyata.
+      <span class="tanda">❞</span>
+    </div>
+    <div class="kesimpulan-teks">
+      <h3>📌 Kesimpulan</h3>
+      <p>
+        Ketiga perspektif Pancasila saling berkaitan dan tidak dapat dipisahkan. Sebagai sistem filsafat, Pancasila melahirkan nilai-nilai luhur. Sebagai ideologi, ia menjadi pedoman hidup bangsa. Sebagai dasar falsafah negara, ia menjadi landasan hukum dan penyelenggaraan negara.
+      </p>
+    </div>
+  </div>
+
+  <!-- REFERENSI -->
+  <div class="referensi">
+    <div class="ref-label">📚 Referensi</div>
+    <div class="ref-list">
+      <span>Kaelan. (2013). Pendidikan Pancasila. Yogyakarta: Paradigma.</span>
+      <span>Undang-Undang Dasar Negara Republik Indonesia Tahun 1945.</span>
+      <span>Modul Pendidikan Pancasila Universitas Terbuka.</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
